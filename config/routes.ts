@@ -43,17 +43,73 @@ export default [
       // },
     ],
   },
-  // {
-  //   path:'/onepisya',
-  //   name: 'onepisya',
-  //   icon: 'smile',
-  //   routes: [
-  //     {
-  //       path: '/onepisya',
-  //       redirect: '/onepisya/index',
-  //     },
-  //   ],
-  // },
+  // --------------------- STUDY: react start ----------------
+  {
+    path: '/onepisya',
+    name: 'onepisya',
+    icon: 'smile',
+    routes: [
+      {
+        path: '/onepisya',
+        redirect: '/onepisya/helloworld',
+      },
+      {
+        name: '1.创建和嵌套组件',
+        icon: 'smile',
+        path: '/onepisya/helloworld',
+        component: './onepisya/helloworld',
+      },
+      {
+        name: '2.添加样式',
+        icon: 'smile',
+        path: '/onepisya/addstyle',
+        component: './onepisya/addstyle',
+      },
+      {
+        name: '3.使用变量',
+        icon: 'smile',
+        path: '/onepisya/var',
+        component: './onepisya/var',
+      },
+      {
+        name: '4.条件渲染',
+        icon: 'smile',
+        path: '/onepisya/conditional-rendering',
+        component: './onepisya/conditional-rendering',
+      },
+      {
+        name: '5.列表渲染',
+        icon: 'smile',
+        path: '/onepisya/list-rendering',
+        component: './onepisya/list-rendering',
+      },
+      {
+        name: '6.响应事件',
+        icon: 'simple',
+        path: '/onepisya/respond-events',
+        component: './onepisya/respond-events',
+      },
+      {
+        name: '7.更新界面',
+        icon: 'smile',
+        path: '/onepisya/update-ui',
+        component: './onepisya/update-ui',
+      },
+      {
+        name: '8.共享数据',
+        icon: 'smile',
+        path: '/onepisya/share-data',
+        component: './onepisya/share-data',
+      },
+      {
+        name: '10.井字棋游戏',
+        icon: 'smile',
+        path: '/onepisya/tic-tac-toe-game',
+        component: './onepisya/tic-tac-toe-game',
+      },
+    ],
+  },
+  // --------------------- STUDY: react end ----------------
   {
     path: '/dashboard',
     name: 'dashboard',

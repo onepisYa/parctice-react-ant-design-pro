@@ -19,7 +19,8 @@ const TopSearch = ({
   dropdownGroup: React.ReactNode;
   searchData: DataItem[];
 }) => {
-  const { styles } = useStyles();
+  // const { styles } = useStyles(); ❌
+  useStyles();
   const columns = [
     {
       title: '排名',

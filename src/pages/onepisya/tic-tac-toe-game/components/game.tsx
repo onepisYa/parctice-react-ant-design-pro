@@ -4,7 +4,10 @@ import Board from './board';
 import type { SquareValue } from './square';
 
 export default function Game() {
-  const [history, setHistory]:[history:SquareValue[][], setHistory: (history:SquareValue[][]) => void] = useState([Array(9).fill(null)]);
+  const [history, setHistory]: [
+    history: SquareValue[][],
+    setHistory: (history: SquareValue[][]) => void,
+  ] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
   // currentMove 跟踪用户当前正在查看的步骤
 
@@ -23,9 +26,9 @@ export default function Game() {
     // setXIsNext(!xIsNext);// 设置下一个玩家是 X 的 flag 值
   }
 
-  function jumpTo(nextMove:number) {
-      setCurrentMove(nextMove);
-      // setXIsNext(nextMove % 2 === 0);
+  function jumpTo(nextMove: number) {
+    setCurrentMove(nextMove);
+    // setXIsNext(nextMove % 2 === 0);
   }
   // 步骤数组
   const moves = history.map((squares, move) => {
@@ -42,16 +45,17 @@ export default function Game() {
     );
   });
 
-
-
   return (
-    <div className={styles.game}>
-      <div className={styles.gameBoard}>
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+    <>
+      <h1>You are at move #{currentMove}</h1>
+      <div className={styles.game}>
+        <div className={styles.gameBoard}>
+          <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+        </div>
+        <div className={styles.gameInfo}>
+          <ol>{moves}</ol>
+        </div>
       </div>
-      <div className={styles.gameInfo}>
-        <ol>{moves}</ol>
-      </div>
-    </div>
+    </>
   );
 }

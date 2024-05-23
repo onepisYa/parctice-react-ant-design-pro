@@ -87,10 +87,25 @@ export default function Board({
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
 
+  const ui_square = (index: number, offset: number) =>
+    Array.from(Array(3).keys()).map((i) => {
+      const k = index + offset + i;
+      return <Square value={squares[k]} onSquareClick={() => handleClick(k)} />;
+    });
+
+  const ui_rows = Array.from(Array(3).keys()).map((i) => {
+    return (
+      <div key={i} className={styles.boardRow}>
+        {ui_square(i, 2 * i)}
+      </div>
+    );
+  });
+
   return (
     <>
       <div className="status">{status}</div>
-      <div className={styles.boardRow}>
+      {ui_rows}
+      {/* <div className={styles.boardRow}>
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
         <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
@@ -104,7 +119,7 @@ export default function Board({
         <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-      </div>
+      </div> */}
     </>
   );
 }

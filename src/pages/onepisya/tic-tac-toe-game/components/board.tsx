@@ -116,7 +116,7 @@ export default function Board({
 
   const ui_rows = Array.from(Array(3).keys()).map((row) => {
     return (
-      <div key={row} className={styles.boardRow}>
+      <div key={row} className={styles['board-row']}>
         {ui_square(row, 2 * row)}
       </div>
     );
@@ -124,19 +124,19 @@ export default function Board({
 
   return (
     <>
-      <div className="status">{status}</div>
+      <div className={styles.status}>{status}</div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>{ui_rows}</div>
-      {/* <div className={styles.boardRow}>
+      {/* <div className={styles.['board-row']}>
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
         <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
       </div>
-      <div className={styles.boardRow}>
+      <div className={styles.['board-row']}>
         <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
         <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
         <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
       </div>
-      <div className={styles.boardRow}>
+      <div className={styles.['board-row']}>
         <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />

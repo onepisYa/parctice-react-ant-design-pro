@@ -59,33 +59,36 @@ export default function Game() {
   });
 
   console.log('game');
+  console.log('styles', styles);
 
   return (
     <>
-      <h1>You are at move #{currentMove}</h1>
-      <div className={styles.game}>
-        <div className={styles.gameBoard}>
-          <Board
-            currentMove={currentMove}
-            xIsNext={xIsNext}
-            squares={currentSquares}
-            onPlay={handlePlay}
-          />
-        </div>
-        <div className={styles.gameInfo}>
-          <ol>
-            <li>
-              <button
-                onClick={() => {
-                  setIsOrderByAsc(!isOrderByAsc);
-                }}
-                type="button"
-              >
-                {isOrderByAsc ? '倒序' : '正序'}
-              </button>
-            </li>
-            {isOrderByAsc ? moves : moves.reverse()}
-          </ol>
+      <div className={styles['tec-tac-toe']}>
+        <h1>You are at move #{currentMove}</h1>
+        <div className={styles.game}>
+          <div className={styles['game-board']}>
+            <Board
+              currentMove={currentMove}
+              xIsNext={xIsNext}
+              squares={currentSquares}
+              onPlay={handlePlay}
+            />
+          </div>
+          <div className={styles['game-info']}>
+            <ol>
+              <li>
+                <button
+                  onClick={() => {
+                    setIsOrderByAsc(!isOrderByAsc);
+                  }}
+                  type="button"
+                >
+                  {isOrderByAsc ? '倒序' : '正序'}
+                </button>
+              </li>
+              {isOrderByAsc ? moves : moves.reverse()}
+            </ol>
+          </div>
         </div>
       </div>
     </>

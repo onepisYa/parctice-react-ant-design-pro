@@ -107,6 +107,18 @@ export default [
         path: '/onepisya/tic-tac-toe-game',
         component: './onepisya/tic-tac-toe-game',
       },
+      {
+        name: '11.React哲学-静态',
+        icon: 'smile',
+        path: '/onepisya/react-phd/static-react-phd',
+        component: './onepisya/react-phd/static-react-phd',
+      },
+      {
+        name: '12.React哲学-state',
+        icon: 'smile',
+        path: '/onepisya/react-phd/state-react-phd',
+        component: './onepisya/react-phd/state-react-phd',
+      },
     ],
   },
   // --------------------- STUDY: react end ----------------

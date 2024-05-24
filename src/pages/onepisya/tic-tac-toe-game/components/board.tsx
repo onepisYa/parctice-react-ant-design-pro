@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import type { SquareValue } from '../components/square';
 import Square from '../components/square';
 import styles from '../style.less';
-
 function calculateWinner(squares: SquareValue[]) {
   const lines = [
     [0, 1, 2],
@@ -17,38 +16,41 @@ function calculateWinner(squares: SquareValue[]) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      // return squares[a];
+      return { winner: squares[a], winnerLine: lines[i] };
     }
   }
-  return null;
+  return { winner: null, winnerLine: [] };
 }
 
 export default function Board({
+  currentMove,
   xIsNext,
   squares,
   onPlay,
 }: {
+  currentMove: number;
   xIsNext: boolean;
   squares: SquareValue[];
-  onPlay: (nextSquares: SquareValue[]) => void;
+  onPlay: ({ nextSquares, cell }: { nextSquares: SquareValue[]; cell: [number, number] }) => void;
 }) {
   /*
     这两个现在移动到 Game 组件中
     const [squares, setSquares]: [SquareValue[], Dispatch<SetStateAction<SquareValue[]>>] = useState(
       Array(9).fill(null),
     );
-    // 格子数据
+    格子数据
     const [xIsNext, setXIsNext] = useState(true);
-    // 落子
+    落子
   */
-  const winner = useMemo(() => {
+  const { winner, winnerLine } = useMemo(() => {
     console.log('useMemo run');
     return calculateWinner(squares);
   }, squares);
   // 把胜者计算放到 memo 中、只要 squares 没有变化那么就不会重新计算
   // 虽然没有什么用、但作为一个演示。
 
-  function handleClick(index: number) {
+  function handleClick({ index, cell }: { index: number; cell: [number, number] }) {
     // 创建一个副本
     const nextSquares = squares.slice();
     if (squares[index] || winner) {
@@ -76,27 +78,46 @@ export default function Board({
       你可以在 memo API 参考 中了解更多关于 React 如何选择何时重新渲染组件的信息。
      */
 
-    onPlay(nextSquares);
+    onPlay({ nextSquares, cell });
   }
 
   let status;
   if (winner) {
     status = 'Winner: ' + winner;
     // 游戏结束
+  } else if (winner === null && currentMove === 9) {
+    // } else if (winner === null && squares.every((square) => square !== null)) {
+    status = 'Draw: have no winner ';
   } else if (winner === null) {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
 
-  const ui_square = (index: number, offset: number) =>
-    Array.from(Array(3).keys()).map((i) => {
-      const k = index + offset + i;
-      return <Square value={squares[k]} onSquareClick={() => handleClick(k)} />;
+  const ui_square = (row: number, offset: number) =>
+    Array.from(Array(3).keys()).map((col) => {
+      const index = row + offset + col;
+      if (winnerLine?.includes(index)) {
+        return (
+          <Square
+            value={squares[index]}
+            onSquareClick={() => handleClick({ index, cell: [row, col] })}
+            isWin={true}
+          />
+        );
+      } else {
+        return (
+          <Square
+            value={squares[index]}
+            onSquareClick={() => handleClick({ index, cell: [row, col] })}
+            isWin={false}
+          />
+        );
+      }
     });
 
-  const ui_rows = Array.from(Array(3).keys()).map((i) => {
+  const ui_rows = Array.from(Array(3).keys()).map((row) => {
     return (
-      <div key={i} className={styles.boardRow}>
-        {ui_square(i, 2 * i)}
+      <div key={row} className={styles.boardRow}>
+        {ui_square(row, 2 * row)}
       </div>
     );
   });
@@ -104,7 +125,7 @@ export default function Board({
   return (
     <>
       <div className="status">{status}</div>
-      {ui_rows}
+      <div style={{ display: 'flex', flexDirection: 'column' }}>{ui_rows}</div>
       {/* <div className={styles.boardRow}>
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />

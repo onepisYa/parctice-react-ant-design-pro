@@ -1,0 +1,48 @@
+/*
+ * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
+ * @Date: 2024-05-26 00:01:43
+ * @LastEditors: onepisYa pis1@qq.com
+ * @LastEditTime: 2024-05-26 00:58:45
+ * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/pure-function-comp/components/Profile/index.tsx
+ * 路漫漫其修远兮，吾将上下而求索。
+ * @Description:
+ */
+/*
+两个 Profile 组件使用不同的数据并排呈现。在第一个资料中点击 “Collapse” 折叠，然后点击 “Expand” 展开它。你会看到两个资料现在显示的是同一个人。这是一个 bug。
+找出产生 bug 的原因，并修复它。
+*/
+
+import Panel from './Panel';
+import styles from './styles.less';
+import { getImageUrl } from './utils';
+
+export type Person = {
+  name: string;
+  imageId: string;
+};
+let currentPerson: Person;
+export default function Profile({ person }: { person: Person }) {
+  currentPerson = person;
+  return (
+    <Panel>
+      <Header />
+      <Avatar />
+    </Panel>
+  );
+}
+
+function Header() {
+  return <h1>{currentPerson.name}</h1>;
+}
+
+function Avatar() {
+  return (
+    <img
+      className={styles.avatar}
+      src={getImageUrl(currentPerson)}
+      alt={currentPerson.name}
+      width={50}
+      height={50}
+    />
+  );
+}

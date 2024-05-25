@@ -119,6 +119,12 @@ export default [
         path: '/onepisya/react-phd/state-react-phd',
         component: './onepisya/react-phd/state-react-phd',
       },
+      {
+        name: '13.保持组件纯粹',
+        icon: 'smile',
+        path: '/onepisya/pure-function-comp',
+        component: './onepisya/pure-function-comp',
+      },
     ],
   },
   // --------------------- STUDY: react end ----------------

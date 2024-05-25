@@ -6,14 +6,16 @@ export default function Clock({ time }: { time: Date }) {
   let hours = time.getHours();
   // ❌ 这个时候 还没有渲染、当然无法获取到 h1#time 元素、所以会报错。
 
-  if (hours >= 0 && hours <= 6) {
-    document.getElementById('time').className = 'night';
-  } else {
-    document.getElementById('time').className = 'day';
-  }
+  // if (hours >= 0 && hours <= 6) {
+  //   document.getElementById('time').className = 'night';
+  // } else {
+  //   document.getElementById('time').className = 'day';
+  // }
+  // ✅ 、直接使用 className 属性来设置 class 是更好的方式。
+  const cls = hours >= 0 && hours <= 6 ? 'night' : 'day';
 
   return (
-    <h1 id="time">
+    <h1 id="time" className={cls}>
       {time.toLocaleTimeString()}
     </h1>
   );

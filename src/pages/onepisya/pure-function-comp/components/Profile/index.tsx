@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-26 00:01:43
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-26 00:58:45
+ * @LastEditTime: 2024-05-26 01:06:26
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/pure-function-comp/components/Profile/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -20,27 +20,29 @@ export type Person = {
   name: string;
   imageId: string;
 };
-let currentPerson: Person;
+// let currentPerson: Person; // ❌ 问题所在
 export default function Profile({ person }: { person: Person }) {
-  currentPerson = person;
+  // currentPerson = person; // ❌ 问题所在
   return (
     <Panel>
-      <Header />
-      <Avatar />
+      <Header person={person} />
+      <Avatar person={person}/>
     </Panel>
   );
 }
 
-function Header() {
-  return <h1>{currentPerson.name}</h1>;
+// ✅
+function Header({person}:{person: Person}) {
+  return <h1>{person.name}</h1>;
 }
 
-function Avatar() {
+// ✅  直接通过参数传递过去即可、不要修改和依赖外部的状态。
+function Avatar({person}:{person: Person}) {
   return (
     <img
       className={styles.avatar}
-      src={getImageUrl(currentPerson)}
-      alt={currentPerson.name}
+      src={getImageUrl(person)}
+      alt={person.name}
       width={50}
       height={50}
     />

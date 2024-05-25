@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-26 00:25:34
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-26 00:59:04
+ * @LastEditTime: 2024-05-26 01:10:09
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/pure-function-comp/components/StoryTray/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -19,10 +19,20 @@ export type Story = {
 };
 
 export default function StoryTray({ stories }: { stories: Story[] }) {
+  // stories.push({
+  //   id: 'create',
+  //   label: 'Create Story',
+  // });
+  // ❌ 问题所在、 修改了传递过来的 stories 、 违反了可变性。
+  // ✅  正确做法 、直接在模板中渲染 create 即可
+  // ✅  正确做法 、 或者 slice 创建副本、然后再 push 、然后再渲染到 模板中
+  /*
+  const localStories = stories.slice();
   stories.push({
     id: 'create',
     label: 'Create Story',
   });
+  */
 
   return (
     <ul>
@@ -30,6 +40,7 @@ export default function StoryTray({ stories }: { stories: Story[] }) {
       {stories.map((story) => (
         <li key={story.id}>{story.label}</li>
       ))}
+      <li>Create Story</li>
     </ul>
   );
 }

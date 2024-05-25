@@ -26,18 +26,18 @@ export default function Profile({ person }: { person: Person }) {
   return (
     <Panel>
       <Header person={person} />
-      <Avatar person={person}/>
+      <Avatar person={person} />
     </Panel>
   );
 }
 
 // ✅
-function Header({person}:{person: Person}) {
+function Header({ person }: { person: Person }) {
   return <h1>{person.name}</h1>;
 }
 
 // ✅  直接通过参数传递过去即可、不要修改和依赖外部的状态。
-function Avatar({person}:{person: Person}) {
+function Avatar({ person }: { person: Person }) {
   return (
     <img
       className={styles.avatar}

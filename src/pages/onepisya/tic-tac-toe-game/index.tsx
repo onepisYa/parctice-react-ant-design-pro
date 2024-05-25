@@ -6,7 +6,7 @@
 // ✅ 4. 当有人获胜时，突出显示致使获胜的三个方块（当没有人获胜时，显示一条关于结果为平局的消息）。
 // ✅ 5. 在“落子”的历史列表中以 [row, col] 格式显示每步的位置。
 
-import Game from './components/game';
+import Game from './components/Game';
 
 export default function TicTacToeGame() {
   return <Game />;

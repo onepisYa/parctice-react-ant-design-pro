@@ -49,13 +49,15 @@
     "antd-style": "^3.6.1",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.10",
+    "immer": "1.7.3",
     "numeral": "^2.0.6",
     "omit.js": "^2.0.2",
     "querystring": "^0.2.1",
     "rc-util": "^5.38.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-fittext": "^1.0.0"
+    "react-fittext": "^1.0.0",
+    "use-immer": "0.5.1"
   },
   "devDependencies": {
     "@ant-design/pro-cli": "^2.1.5",

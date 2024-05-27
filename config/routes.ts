@@ -46,7 +46,7 @@ export default [
   // --------------------- STUDY: react start ----------------
   {
     path: '/onepisya',
-    name: 'onepisya',
+    name: 'onepisya-react-practice',
     icon: 'smile',
     routes: [
       {
@@ -124,6 +124,12 @@ export default [
         icon: 'smile',
         path: '/onepisya/pure-function-comp',
         component: './onepisya/pure-function-comp',
+      },
+      {
+        name: '14.useState例子',
+        icon: 'smile',
+        path: '/onepisya/use-state',
+        component: './onepisya/use-state',
       },
     ],
   },

@@ -1,0 +1,14 @@
+.container {
+  & > div {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+  }
+  hr {
+    @hr-color: #25c5ff;
+    color: @hr-color;
+    background-color: @hr-color;
+    border-color: @hr-color;
+  }
+}

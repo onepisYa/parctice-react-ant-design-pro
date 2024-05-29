@@ -85,7 +85,7 @@ export default [
       },
       {
         name: '6.响应事件',
-        icon: 'simple',
+        icon: 'smile',
         path: '/onepisya/respond-events',
         component: './onepisya/respond-events',
       },
@@ -130,6 +130,12 @@ export default [
         icon: 'smile',
         path: '/onepisya/use-state',
         component: './onepisya/use-state',
+      },
+      {
+        name: '15.useEffect例子',
+        icon: 'smile',
+        path: '/onepisya/use-effect',
+        component: './onepisya/use-effect',
       },
     ],
   },

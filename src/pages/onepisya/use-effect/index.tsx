@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-27 00:49:47
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-30 05:55:24
+ * @LastEditTime: 2024-06-01 04:27:02
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-effect/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -198,7 +198,7 @@ export default function UseStateExample() {
         <div>
           <h2>传递响应式依赖项的示例</h2>
           <p>✅ 这里非常的微妙、需要重点看下</p>
-          <ul style={{ listStyle: 'reset' }}>
+          <ul style={{ listStyle: 'unset' }}>
             <li>
               如果指定了依赖项，则 Effect 在 <b>初始渲染后以及依赖项变更的重新渲染后</b> 运行。
             </li>

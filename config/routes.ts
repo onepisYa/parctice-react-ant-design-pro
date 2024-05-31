@@ -137,6 +137,12 @@ export default [
         path: '/onepisya/use-effect',
         component: './onepisya/use-effect',
       },
+      {
+        name: '16.useContext例子',
+        icon: 'smile',
+        path: '/onepisya/use-context',
+        component: './onepisya/use-context',
+      },
     ],
   },
   // --------------------- STUDY: react end ----------------

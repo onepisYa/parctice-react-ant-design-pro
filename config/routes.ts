@@ -143,6 +143,12 @@ export default [
         path: '/onepisya/use-context',
         component: './onepisya/use-context',
       },
+      {
+        name: '17.useReducer例子',
+        icon: 'smile',
+        path: '/onepisya/use-reducer',
+        component: './onepisya/use-reducer',
+      },
     ],
   },
   // --------------------- STUDY: react end ----------------

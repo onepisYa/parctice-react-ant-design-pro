@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-26 00:25:34
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-26 01:10:09
+ * @LastEditTime: 2024-06-09 20:17:56
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/pure-function-comp/components/StoryTray/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -18,7 +18,13 @@ export type Story = {
   label: string;
 };
 
-export default function StoryTray({ stories }: { stories: Story[] }) {
+export default function StoryTray({
+  stories,
+  setStories,
+}: {
+  stories: Story[];
+  setStories: (stories: Story[]) => void;
+}) {
   // stories.push({
   //   id: 'create',
   //   label: 'Create Story',
@@ -40,7 +46,16 @@ export default function StoryTray({ stories }: { stories: Story[] }) {
       {stories.map((story) => (
         <li key={story.id}>{story.label}</li>
       ))}
-      <li>Create Story</li>
+      <li
+        onClick={() => {
+          setStories([
+            ...stories,
+            { id: (stories[stories.length - 1].id as number) + 1, label: 'onepisYa Story' },
+          ]);
+        }}
+      >
+        Create Story
+      </li>
     </ul>
   );
 }

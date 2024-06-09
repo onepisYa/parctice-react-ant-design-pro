@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-25 22:51:29
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-06-09 19:45:54
+ * @LastEditTime: 2024-06-09 20:12:32
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/pure-function-comp/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -33,9 +33,9 @@ function useTime() {
 }
 
 export default function PureFunction() {
-  let [stories, setStories] = useState([...initialStories]);
+  let [stories, setStories] = useState(() => [...initialStories]);
+  // let [stories] = useState(() => [...initialStories]);
   let time = useTime();
-  setStories([...stories, { id: 2, label: "Pis's Story" }]);
 
   // HACK: Prevent the memory from growing forever while you read docs.
   // We're breaking our own rules here.
@@ -70,7 +70,7 @@ export default function PureFunction() {
           }}
         >
           <h2>It is {time.toLocaleTimeString()} now.</h2>
-          <StoryTray stories={stories} />
+          <StoryTray setStories={setStories} stories={stories} />
         </div>
       </div>
     </>

@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-27 00:49:47
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-28 03:44:29
+ * @LastEditTime: 2024-06-09 20:19:58
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-state/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -169,7 +169,7 @@ export default function UseStateExample() {
 
         <div>
           <h2>存储前一次渲染的信息 </h2>
-          <p>
+          <span>
             通常情况下，你会在事件处理函数中更新状态。然而，在极少数情况下，你可能希望在响应渲染时调整状态——例如，当
             props 改变时，你可能希望改变状态变量。 在大多数情况下，你不需要这样做：
             <p>
@@ -237,7 +237,7 @@ export default function UseStateExample() {
               语句退出后立即重新渲染该组件，并在渲染子组件前进行。这样，子组件就不需要进行两次渲染。你的组件函数的其余部分仍会执行（然后结果将被丢弃）。如果你的条件判断在所有
               Hook 调用的下方，可以提前添加一个 return; 以便更早地重新开始渲染。
             </p>
-          </p>
+          </span>
           <CountLabel />
         </div>
       </div>

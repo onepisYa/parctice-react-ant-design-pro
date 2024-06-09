@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-06-01 04:08:10
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-06-09 19:40:04
+ * @LastEditTime: 2024-06-09 20:53:49
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-reducer/examples/UseImmerTodo.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -20,9 +20,9 @@ const initialTasks: Task[] = [
   { id: 2, text: 'Lennon Wall pic', done: false },
 ];
 
-function tasksReducer(draft: Task[] | null, action: TaskAction): Task[] | null {
+function tasksReducer(draft: Task[] | null, action: TaskAction): Task[] | undefined {
   if (draft === null) {
-    return null;
+    return undefined;
   }
   switch (action.type) {
     case 'added': {
@@ -32,13 +32,13 @@ function tasksReducer(draft: Task[] | null, action: TaskAction): Task[] | null {
         done: false,
       } as Task);
       // break;
-      return null;
+      return undefined;
     }
     case 'changed': {
       const index = draft?.findIndex((t) => t.id === action?.task?.id);
       draft[index] = action.task!;
       // break;
-      return null;
+      return undefined;
     }
     case 'deleted': {
       return draft.filter((t) => t.id !== action.id);
@@ -53,6 +53,8 @@ export default function TaskApp() {
   const [tasks, dispatch] = useImmerReducer<Task[] | null, TaskAction>(tasksReducer, initialTasks);
 
   function handleAddTask(text: Task['text']) {
+    console.log('onepisya', text);
+
     dispatch({
       type: 'added',
       id: nextId++,

@@ -15,7 +15,7 @@ export default function Square({
 }) {
   const cls = isWin ? classNames(styles.square, styles.win) : styles.square;
   return (
-    <button onClick={onSquareClick} className={cls}>
+    <button type="button" onClick={onSquareClick} className={cls}>
       {value}
     </button>
   );

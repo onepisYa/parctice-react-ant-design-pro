@@ -7,7 +7,11 @@ function MyButton() {
     setCount(count + 1);
   }
 
-  return <button onClick={handleClick}>Clicked {count} times</button>;
+  return (
+    <button type="button" onClick={handleClick}>
+      Clicked {count} times
+    </button>
+  );
 }
 const UpdateUI = () => {
   return (

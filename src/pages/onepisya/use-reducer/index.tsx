@@ -32,7 +32,11 @@ export default function UseStateExample() {
           <Todo />
           <p>
             在这个示例中，reducer 管理一个名为 tasks 的数组。数组{' '}
-            <a href="https://zh-hans.react.dev/learn/updating-arrays-in-state" target="_blank">
+            <a
+              href="https://zh-hans.react.dev/learn/updating-arrays-in-state"
+              target="_blank"
+              rel="noreferrer"
+            >
               不能使用修改方法{' '}
             </a>
             来更新。
@@ -46,7 +50,11 @@ export default function UseStateExample() {
           <p>
             如果使用复制方法更新数组和对象让你不厌其烦，那么可以使用 Immer
             这样的库来减少一些重复的样板代码。
-            <a href="https://github.com/immerjs/use-immer#useimmerreducer" target="_blank">
+            <a
+              href="https://github.com/immerjs/use-immer#useimmerreducer"
+              target="_blank"
+              rel="noreferrer"
+            >
               Immer
             </a>{' '}
             让你可以专注于逻辑，因为它在内部均使用复制方法来完成更新：

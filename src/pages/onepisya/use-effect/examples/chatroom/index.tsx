@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-30 02:39:00
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-30 02:43:52
+ * @LastEditTime: 2024-06-09 19:20:03
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-effect/examples/chatroom/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -41,7 +41,9 @@ export default function App() {
           <option value="music">music</option>
         </select>
       </label>
-      <button onClick={() => setShow(!show)}>{show ? 'Close chat' : 'Open chat'}</button>
+      <button type="button" onClick={() => setShow(!show)}>
+        {show ? 'Close chat' : 'Open chat'}
+      </button>
       {show && <hr />}
       {show && <ChatRoom roomId={roomId} />}
     </>

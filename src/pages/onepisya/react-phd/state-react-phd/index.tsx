@@ -1,26 +1,47 @@
+/*
+ * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
+ * @Date: 2024-05-24 20:55:32
+ * @LastEditors: onepisYa pis1@qq.com
+ * @LastEditTime: 2024-06-09 19:53:28
+ * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/react-phd/state-react-phd/index.tsx
+ * 路漫漫其修远兮，吾将上下而求索。
+ * @Description:
+ */
 // 教程 https://react.dev/learn/thinking-in-react
 // 教程中的第三到第五步
 import { useState } from 'react';
 import { CategoryEnum, Product } from '../react-phd-type';
 import styles from '../style.less';
-
-function FilterableProductTable({ products }: { products: Product[] }) {
-  const [filterText, setFilterText] = useState('');
-  const [inStockOnly, setInStockOnly] = useState(false);
-
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange,
+}: {
+  filterText: string;
+  inStockOnly: boolean;
+  onFilterTextChange: (value: string) => void;
+  onInStockOnlyChange: (value: boolean) => void;
+}) {
   return (
-    <div className={styles['react-phd']}>
-      <SearchBar
-        filterText={filterText}
-        inStockOnly={inStockOnly}
-        onFilterTextChange={setFilterText}
-        onInStockOnlyChange={setInStockOnly}
+    <form>
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Search..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
       />
-      <ProductTable products={products} filterText={filterText} inStockOnly={inStockOnly} />
-    </div>
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
+        />{' '}
+        Only show products in stock
+      </label>
+    </form>
   );
 }
-
 function ProductCategoryRow({ category }: { category: CategoryEnum }) {
   return (
     <tr>
@@ -83,34 +104,20 @@ function ProductTable({
   );
 }
 
-function SearchBar({
-  filterText,
-  inStockOnly,
-  onFilterTextChange,
-  onInStockOnlyChange,
-}: {
-  filterText: string;
-  inStockOnly: boolean;
-  onFilterTextChange: (value: string) => void;
-  onInStockOnlyChange: (value: boolean) => void;
-}) {
+function FilterableProductTable({ products }: { products: Product[] }) {
+  const [filterText, setFilterText] = useState('');
+  const [inStockOnly, setInStockOnly] = useState(false);
+
   return (
-    <form>
-      <input
-        type="text"
-        value={filterText}
-        placeholder="Search..."
-        onChange={(e) => onFilterTextChange(e.target.value)}
+    <div className={styles['react-phd']}>
+      <SearchBar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
+        onInStockOnlyChange={setInStockOnly}
       />
-      <label>
-        <input
-          type="checkbox"
-          checked={inStockOnly}
-          onChange={(e) => onInStockOnlyChange(e.target.checked)}
-        />{' '}
-        Only show products in stock
-      </label>
-    </form>
+      <ProductTable products={products} filterText={filterText} inStockOnly={inStockOnly} />
+    </div>
   );
 }
 

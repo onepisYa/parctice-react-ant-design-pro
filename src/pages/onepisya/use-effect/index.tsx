@@ -35,6 +35,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed"
               target="_blank"
+              rel="noreferrer"
             >
               这里描述的
             </a>{' '}
@@ -64,6 +65,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/learn/manipulating-the-dom-with-refs"
               target="_blank"
+              rel="noreferrer"
             >
               使用 ref
             </a>{' '}
@@ -92,6 +94,7 @@ export default function UseStateExample() {
             <a
               href="https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API"
               target="_blank"
+              rel="noreferrer"
             >
               IntersectionObserver
             </a>
@@ -109,6 +112,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/reference/react/useEffect#examples-connecting"
               target="_blank"
+              rel="noreferrer"
             >
               前面的一个示例
             </a>{' '}
@@ -124,6 +128,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/reference/react/useEffect#examples-connecting"
               target="_blank"
+              rel="noreferrer"
             >
               前面的一个示例
             </a>{' '}
@@ -140,6 +145,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/reference/react/useEffect#examples-connecting"
               target="_blank"
+              rel="noreferrer"
             >
               前面的一个示例
             </a>{' '}
@@ -176,6 +182,7 @@ export default function UseStateExample() {
             <a
               href="https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect"
               target="_blank"
+              rel="noreferrer"
             >
               你的代码不会受到“ 竞争条件 ”的影响
             </a>
@@ -187,6 +194,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/learn/reusing-logic-with-custom-hooks#when-to-use-custom-hooks"
               target="_blank"
+              rel="noreferrer"
             >
               使用自定义 Hook 更简单——不管是你自己的 Hook 还是由社区维护的 Hook。
             </a>
@@ -219,6 +227,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/reference/react/useState#updating-state-based-on-the-previous-state"
               target="_blank"
+              rel="noreferrer"
             >
               {'c => c + 1'}
             </a>{' '}
@@ -230,6 +239,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/learn/removing-effect-dependencies#are-you-reading-some-state-to-calculate-the-next-state"
               target="_blank"
+              rel="noreferrer"
             >
               因此 Effect 不再需要依赖于 count
             </a>

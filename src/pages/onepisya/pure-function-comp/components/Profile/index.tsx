@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-26 00:01:43
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-26 01:06:26
+ * @LastEditTime: 2024-06-09 19:46:24
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/pure-function-comp/components/Profile/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -20,17 +20,6 @@ export type Person = {
   name: string;
   imageId: string;
 };
-// let currentPerson: Person; // ❌ 问题所在
-export default function Profile({ person }: { person: Person }) {
-  // currentPerson = person; // ❌ 问题所在
-  return (
-    <Panel>
-      <Header person={person} />
-      <Avatar person={person} />
-    </Panel>
-  );
-}
-
 // ✅
 function Header({ person }: { person: Person }) {
   return <h1>{person.name}</h1>;
@@ -46,5 +35,16 @@ function Avatar({ person }: { person: Person }) {
       width={50}
       height={50}
     />
+  );
+}
+
+// let currentPerson: Person; // ❌ 问题所在
+export default function Profile({ person }: { person: Person }) {
+  // currentPerson = person; // ❌ 问题所在
+  return (
+    <Panel>
+      <Header person={person} />
+      <Avatar person={person} />
+    </Panel>
   );
 }

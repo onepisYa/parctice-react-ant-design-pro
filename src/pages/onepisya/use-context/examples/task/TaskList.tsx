@@ -2,29 +2,16 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-30 23:15:38
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-31 00:11:30
+ * @LastEditTime: 2024-06-09 19:25:46
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-context/examples/task/TaskList.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
  */
 import { useState } from 'react';
-import type { Task } from './TasksContext';
+import type { Task as TaskType } from './TasksContext';
 import { useTasks, useTasksDispatch } from './TasksContext';
 
-export default function TaskList() {
-  const tasks = useTasks();
-  return (
-    <ul>
-      {tasks.map((task) => (
-        <li key={task?.id}>
-          <Task task={task} />
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function Task({ task }: { task: Task }) {
+function Task({ task }: { task: TaskType }) {
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useTasksDispatch();
   let taskContent;
@@ -43,14 +30,18 @@ function Task({ task }: { task: Task }) {
             });
           }}
         />
-        <button onClick={() => setIsEditing(false)}>Save</button>
+        <button type="button" onClick={() => setIsEditing(false)}>
+          Save
+        </button>
       </>
     );
   } else {
     taskContent = (
       <>
         {task?.text}
-        <button onClick={() => setIsEditing(true)}>Edit</button>
+        <button type="button" onClick={() => setIsEditing(true)}>
+          Edit
+        </button>
       </>
     );
   }
@@ -71,6 +62,7 @@ function Task({ task }: { task: Task }) {
       />
       {taskContent}
       <button
+        type="button"
         onClick={() => {
           dispatch({
             type: 'deleted',
@@ -81,5 +73,17 @@ function Task({ task }: { task: Task }) {
         Delete
       </button>
     </label>
+  );
+}
+export default function TaskList() {
+  const tasks = useTasks();
+  return (
+    <ul>
+      {tasks.map((task) => (
+        <li key={task?.id}>
+          <Task task={task} />
+        </li>
+      ))}
+    </ul>
   );
 }

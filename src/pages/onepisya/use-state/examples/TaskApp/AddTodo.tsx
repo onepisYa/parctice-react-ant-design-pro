@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-27 02:31:24
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-27 02:40:08
+ * @LastEditTime: 2024-06-09 19:17:47
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-state/examples/TaskApp/AddTodo.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -19,6 +19,7 @@ export default function AddTodo({ onAddTodo }: { onAddTodo: (title: Todo['title'
     <>
       <input placeholder="Add todo" value={title} onChange={(e) => setTitle(e.target.value)} />
       <button
+        type="button"
         onClick={() => {
           setTitle('');
           onAddTodo(title);

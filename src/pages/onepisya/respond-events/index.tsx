@@ -3,7 +3,11 @@ function RespondEvents() {
     alert('You clicked me!');
   }
 
-  return <button onClick={handleClick}>Click me</button>;
+  return (
+    <button type="button" onClick={handleClick}>
+      Click me
+    </button>
+  );
 }
 
 export default RespondEvents;

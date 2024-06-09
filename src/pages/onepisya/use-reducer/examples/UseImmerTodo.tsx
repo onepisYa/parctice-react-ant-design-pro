@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-06-01 04:08:10
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-06-01 21:22:09
+ * @LastEditTime: 2024-06-09 19:40:04
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-reducer/examples/UseImmerTodo.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -12,6 +12,13 @@ import AddTask from './todo/AddTask';
 import type { Task, TaskAction } from './todo/index';
 import styles from './todo/styles.less';
 import TaskList from './todo/TaskList';
+
+let nextId = 3;
+const initialTasks: Task[] = [
+  { id: 0, text: 'Visit Kafka Museum', done: true },
+  { id: 1, text: 'Watch a puppet show', done: false },
+  { id: 2, text: 'Lennon Wall pic', done: false },
+];
 
 function tasksReducer(draft: Task[] | null, action: TaskAction): Task[] | null {
   if (draft === null) {
@@ -77,10 +84,3 @@ export default function TaskApp() {
     </>
   );
 }
-
-let nextId = 3;
-const initialTasks: Task[] = [
-  { id: 0, text: 'Visit Kafka Museum', done: true },
-  { id: 1, text: 'Watch a puppet show', done: false },
-  { id: 2, text: 'Lennon Wall pic', done: false },
-];

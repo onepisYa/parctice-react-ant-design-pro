@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-06-01 02:54:49
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-06-01 03:42:16
+ * @LastEditTime: 2024-06-09 19:18:42
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-reducer/examples/Form.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -61,7 +61,9 @@ export default function Form() {
     <>
       <div className={styles['onpeisya-reducer']}>
         <input value={state.name} onChange={handleInputChange} />
-        <button onClick={handleButtonClick}>Increment age</button>
+        <button type="button" onClick={handleButtonClick}>
+          Increment age
+        </button>
         <p>
           Hello, {state.name}. You are {state.age}.
         </p>

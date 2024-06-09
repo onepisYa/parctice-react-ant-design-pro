@@ -98,6 +98,7 @@ export default function Board({
       if (winnerLine?.includes(index)) {
         return (
           <Square
+            key={`${index}-square`}
             value={squares[index]}
             onSquareClick={() => handleClick({ index, cell: [row, col] })}
             isWin={true}
@@ -106,6 +107,7 @@ export default function Board({
       } else {
         return (
           <Square
+            key={`${index}-square`}
             value={squares[index]}
             onSquareClick={() => handleClick({ index, cell: [row, col] })}
             isWin={false}

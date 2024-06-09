@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-30 23:14:32
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-31 00:08:39
+ * @LastEditTime: 2024-06-09 19:40:33
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-context/examples/task/TasksContext.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -16,24 +16,6 @@ const TasksContext: Context<Task[]> = createContext(null as unknown as Task[]);
 const TasksDispatchContext: Context<Dispatch<Action>> = createContext(
   null as unknown as Dispatch<Action>,
 );
-
-export function TasksProvider({ children }: { children: React.ReactNode }) {
-  const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
-
-  return (
-    <TasksContext.Provider value={tasks}>
-      <TasksDispatchContext.Provider value={dispatch}>{children}</TasksDispatchContext.Provider>
-    </TasksContext.Provider>
-  );
-}
-
-export function useTasks() {
-  return useContext(TasksContext);
-}
-
-export function useTasksDispatch() {
-  return useContext(TasksDispatchContext);
-}
 
 function tasksReducer(tasks: Task[], action: Action) {
   switch (action.type) {
@@ -70,3 +52,21 @@ const initialTasks: Task[] = [
   { id: 1, text: 'Visit the temple', done: false },
   { id: 2, text: 'Drink matcha', done: false },
 ];
+
+export function TasksProvider({ children }: { children: React.ReactNode }) {
+  const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
+
+  return (
+    <TasksContext.Provider value={tasks}>
+      <TasksDispatchContext.Provider value={dispatch}>{children}</TasksDispatchContext.Provider>
+    </TasksContext.Provider>
+  );
+}
+
+export function useTasks() {
+  return useContext(TasksContext);
+}
+
+export function useTasksDispatch() {
+  return useContext(TasksDispatchContext);
+}

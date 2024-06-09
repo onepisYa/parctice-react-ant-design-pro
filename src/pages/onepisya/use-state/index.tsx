@@ -82,6 +82,7 @@ export default function UseStateExample() {
             <a
               target="_blank"
               href="https://zh-hans.react.dev/learn/updating-objects-in-state#updating-a-nested-object"
+              rel="noreferrer"
             >
               更新嵌套对象
             </a>
@@ -133,7 +134,11 @@ export default function UseStateExample() {
           <h2>使用 key 重置状态 </h2>
           <p>
             在{' '}
-            <a href="https://zh-hans.react.dev/learn/rendering-lists" target="_blank">
+            <a
+              href="https://zh-hans.react.dev/learn/rendering-lists"
+              target="_blank"
+              rel="noreferrer"
+            >
               渲染列表
             </a>{' '}
             时，你经常会遇到 <code dir="ltr">key</code> 属性。然而，它还有另外一个用途。
@@ -153,6 +158,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/learn/preserving-and-resetting-state"
               target="_blank"
+              rel="noreferrer"
             >
               保留和重置状态
             </a>{' '}
@@ -172,11 +178,16 @@ export default function UseStateExample() {
               <a
                 href="https://zh-hans.react.dev/learn/choosing-the-state-structure#avoid-redundant-state"
                 target="_blank"
+                rel="noreferrer"
               >
                 完全可以移除那些多余的状态
               </a>{' '}
               。如果你担心重新计算的频率过高，可以使用{' '}
-              <a href="https://zh-hans.react.dev/reference/react/useMemo" target="_blank">
+              <a
+                href="https://zh-hans.react.dev/reference/react/useMemo"
+                target="_blank"
+                rel="noreferrer"
+              >
                 useMemo Hook
               </a>{' '}
               来帮助优化。 如果你想重置整个组件树的状态，
@@ -206,11 +217,16 @@ export default function UseStateExample() {
               <a
                 href="https://zh-hans.react.dev/reference/react/useState#updating-objects-and-arrays-in-state"
                 target="_blank"
+                rel="noreferrer"
               >
                 不直接改变 state 来更新
               </a>{' '}
               状态——这并不意味着你可以违反其他{' '}
-              <a href="https://zh-hans.react.dev/learn/keeping-components-pure" target="_blank">
+              <a
+                href="https://zh-hans.react.dev/learn/keeping-components-pure"
+                target="_blank"
+                rel="noreferrer"
+              >
                 纯函数
               </a>{' '}
               的规则。

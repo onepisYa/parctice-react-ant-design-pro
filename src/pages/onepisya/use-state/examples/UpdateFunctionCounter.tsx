@@ -11,6 +11,7 @@ export default function Counter() {
     <>
       <h1>Your age: {age}</h1>
       <button
+        type="button"
         onClick={() => {
           increment();
           increment();
@@ -20,6 +21,7 @@ export default function Counter() {
         +3
       </button>
       <button
+        type="button"
         onClick={() => {
           increment();
         }}

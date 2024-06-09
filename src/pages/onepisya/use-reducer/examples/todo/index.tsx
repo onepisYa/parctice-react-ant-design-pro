@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-06-01 03:43:58
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-06-01 04:10:18
+ * @LastEditTime: 2024-06-09 19:39:04
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-reducer/examples/todo/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -24,6 +24,13 @@ export type Task = {
   text: string;
   done: boolean;
 };
+
+let nextId = 3;
+const initialTasks: Task[] = [
+  { id: 0, text: 'Visit Kafka Museum', done: true },
+  { id: 1, text: 'Watch a puppet show', done: false },
+  { id: 2, text: 'Lennon Wall pic', done: false },
+];
 
 function tasksReducer(tasks: Task[], action: TaskAction): Task[] {
   switch (action.type) {
@@ -93,10 +100,3 @@ export default function TaskApp() {
     </>
   );
 }
-
-let nextId = 3;
-const initialTasks: Task[] = [
-  { id: 0, text: 'Visit Kafka Museum', done: true },
-  { id: 1, text: 'Watch a puppet show', done: false },
-  { id: 2, text: 'Lennon Wall pic', done: false },
-];

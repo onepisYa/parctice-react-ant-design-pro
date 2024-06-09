@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-06-08 20:51:31
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-06-08 20:55:55
+ * @LastEditTime: 2024-06-09 19:20:40
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/custom-hook/examples/BetterSaveButton.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -40,7 +40,7 @@ function SaveButton() {
   }
 
   return (
-    <button disabled={!isOnline} onClick={handleSaveClick}>
+    <button type="button" disabled={!isOnline} onClick={handleSaveClick}>
       {isOnline ? 'Save progress' : 'Reconnecting...'}
     </button>
   );

@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-29 02:33:47
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-29 03:03:56
+ * @LastEditTime: 2024-06-09 19:18:49
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-effect/examples/MyAnimation.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -85,7 +85,9 @@ export default function App() {
   const [show, setShow] = useState(false);
   return (
     <>
-      <button onClick={() => setShow(!show)}>{show ? 'Remove' : 'Show'}</button>
+      <button type="button" onClick={() => setShow(!show)}>
+        {show ? 'Remove' : 'Show'}
+      </button>
       <hr />
       {show && <Welcome />}
     </>

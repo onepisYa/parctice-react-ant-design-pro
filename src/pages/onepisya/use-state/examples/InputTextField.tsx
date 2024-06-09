@@ -11,7 +11,9 @@ export default function MyInput() {
     <>
       <input value={text} onChange={handleChange} />
       <p>You typed: {text}</p>
-      <button onClick={() => setText('hello')}>Reset</button>
+      <button type="button" onClick={() => setText('hello')}>
+        Reset
+      </button>
     </>
   );
 }

@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-25 22:51:29
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-26 00:59:58
+ * @LastEditTime: 2024-06-09 19:45:54
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/pure-function-comp/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -21,9 +21,21 @@ let initialStories: Story[] = [
   { id: 1, label: "Taylor's Story" },
 ];
 
+function useTime() {
+  const [time, setTime] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
+
 export default function PureFunction() {
   let [stories, setStories] = useState([...initialStories]);
   let time = useTime();
+  setStories([...stories, { id: 2, label: "Pis's Story" }]);
 
   // HACK: Prevent the memory from growing forever while you read docs.
   // We're breaking our own rules here.
@@ -63,15 +75,4 @@ export default function PureFunction() {
       </div>
     </>
   );
-}
-
-function useTime() {
-  const [time, setTime] = useState(() => new Date());
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-    return () => clearInterval(id);
-  }, []);
-  return time;
 }

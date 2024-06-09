@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-27 00:49:47
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-06-01 01:59:20
+ * @LastEditTime: 2024-06-09 19:51:05
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-context/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -80,7 +80,11 @@ export default function UseStateExample() {
           <TaskAPP />
           <p>
             在大型应用程序中，通常将 context 和{' '}
-            <a href="https://zh-hans.react.dev/reference/react/useReducer" target="_blank">
+            <a
+              href="https://zh-hans.react.dev/reference/react/useReducer"
+              target="_blank"
+              rel="noreferrer"
+            >
               reducer
             </a>{' '}
             结合起来从组件中抽离与某种状态相关的逻辑。在本例中，所有的“线路”都隐藏在 TasksContext.js
@@ -88,6 +92,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/learn/scaling-up-with-reducer-and-context"
               target="_blank"
+              rel="noreferrer"
             >
               完整演示
             </a>
@@ -100,8 +105,8 @@ export default function UseStateExample() {
         <div>
           <h2>覆盖主题</h2>
           <p>
-            这里，与 Footer 外的值为（"dark"）的按钮相比，里面 的按钮接收到一个不一样的 context
-            值（"light"）。
+            这里，与 Footer 外的值为 &#xFF08;&#x22;dark&#x22;&#xFF09;的按钮相比，里面
+            的按钮接收到一个不一样的 context 值&#xFF08;&#x22;light&#x22;&#xFF09;）。
           </p>
           <OverridingTheme />
         </div>
@@ -117,6 +122,7 @@ export default function UseStateExample() {
             <a
               href="https://zh-hans.react.dev/learn/passing-data-deeply-with-context"
               target="_blank"
+              rel="noreferrer"
             >
               详细演示
             </a>

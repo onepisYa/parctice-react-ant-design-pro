@@ -22,7 +22,7 @@ export default function SaveButton() {
   }
 
   return (
-    <button disabled={!isOnline} onClick={handleSaveClick}>
+    <button type="button" disabled={!isOnline} onClick={handleSaveClick}>
       {isOnline ? 'Save progress' : 'Reconnecting...'}
     </button>
   );

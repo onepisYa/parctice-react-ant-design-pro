@@ -5,7 +5,9 @@ export default function Panel({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(true);
   return (
     <section className={styles.panel}>
-      <button onClick={() => setOpen(!open)}>{open ? 'Collapse' : 'Expand'}</button>
+      <button type="button" onClick={() => setOpen(!open)}>
+        {open ? 'Collapse' : 'Expand'}
+      </button>
       {open && children}
     </section>
   );

@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-27 01:51:00
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-27 01:51:01
+ * @LastEditTime: 2024-06-09 19:22:15
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-state/examples/DirectValueCounter.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -20,6 +20,7 @@ export default function Counter() {
     <>
       <h1>Your age: {age}</h1>
       <button
+        type="button"
         onClick={() => {
           increment();
           increment();
@@ -29,6 +30,7 @@ export default function Counter() {
         +3
       </button>
       <button
+        type="button"
         onClick={() => {
           increment();
         }}

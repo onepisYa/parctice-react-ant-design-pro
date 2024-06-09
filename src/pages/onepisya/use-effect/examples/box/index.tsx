@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-30 03:01:06
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-30 03:15:22
+ * @LastEditTime: 2024-06-09 19:46:45
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-effect/examples/box/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -44,6 +44,13 @@ function Box() {
     />
   );
 }
+function LongSection() {
+  const items = [];
+  for (let i = 0; i < 50; i++) {
+    items.push(<li key={i}>Item #{i} (keep scrolling)</li>);
+  }
+  return <ul>{items}</ul>;
+}
 
 export default function App() {
   return (
@@ -57,12 +64,4 @@ export default function App() {
       </div>
     </>
   );
-}
-
-function LongSection() {
-  const items = [];
-  for (let i = 0; i < 50; i++) {
-    items.push(<li key={i}>Item #{i} (keep scrolling)</li>);
-  }
-  return <ul>{items}</ul>;
 }

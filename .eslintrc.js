@@ -1,9 +1,10 @@
 module.exports = {
   extends: [
     require.resolve('@umijs/lint/dist/config/eslint'),
-    'react-app',
-    'react-app/jest',
-    'prettier',
+    // 'plugin:react-hooks/recommended',
+    // 'react-app',
+    // 'react-app/jest',
+    // 'prettier',
   ],
   globals: {
     page: true,

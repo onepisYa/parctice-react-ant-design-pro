@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-28 03:27:36
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-28 03:38:32
+ * @LastEditTime: 2024-06-09 19:22:21
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-state/examples/CountLabel.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -29,8 +29,12 @@ export default function App() {
   const [count, setCount] = useState(0);
   return (
     <>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <button type="button" onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+      <button type="button" onClick={() => setCount(count - 1)}>
+        Decrement
+      </button>
       <CountLabel count={count} />
     </>
   );

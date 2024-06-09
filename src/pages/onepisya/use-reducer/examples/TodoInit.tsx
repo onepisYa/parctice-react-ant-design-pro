@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-06-01 04:21:05
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-06-01 19:34:52
+ * @LastEditTime: 2024-06-09 19:18:30
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-reducer/examples/TodoInit.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -79,6 +79,7 @@ function TodoList({ username }: { username: string }) {
         }}
       />
       <button
+        type="button"
         onClick={() => {
           dispatch({ type: 'added_todo' } as Action);
         }}

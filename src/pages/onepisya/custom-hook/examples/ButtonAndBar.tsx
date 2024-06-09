@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-06-08 14:46:24
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-06-08 14:48:32
+ * @LastEditTime: 2024-06-09 19:20:35
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/custom-hook/examples/ButtonAndBar.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -22,7 +22,7 @@ function SaveButton() {
   }
 
   return (
-    <button disabled={!isOnline} onClick={handleSaveClick}>
+    <button type="button" disabled={!isOnline} onClick={handleSaveClick}>
       {isOnline ? 'Save progress' : 'Reconnecting...'}
     </button>
   );

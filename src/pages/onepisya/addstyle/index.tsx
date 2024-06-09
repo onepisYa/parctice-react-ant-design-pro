@@ -6,7 +6,7 @@ const AddStyle = () => {
     <>
       <h1>添加样式</h1>
       <p className={styles.red}>这个字将会变成红色</p>
-      <a href="https://pro.ant.design/zh-CN/docs/less" target="_blank">
+      <a href="https://pro.ant.design/zh-CN/docs/less" rel="noreferrer" target="_blank">
         {' '}
         pro.ant.design less 使用文档
       </a>

@@ -2,7 +2,7 @@
  * Copyright (c) 2024 by onepisYa pis1@qq.com , All Rights Reserved.
  * @Date: 2024-05-30 03:37:32
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2024-05-30 03:56:47
+ * @LastEditTime: 2024-06-09 19:30:48
  * @FilePath: /parctice-react-ant-design-pro/src/pages/onepisya/use-effect/examples/map/index.tsx
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
@@ -49,8 +49,13 @@ export default function App() {
   };
   return (
     <>
-      Zoom level: {zoomLevel}x<button onClick={plus}>+</button>
-      <button onClick={minus}>-</button>
+      Zoom level: {zoomLevel}x
+      <button type="button" onClick={plus}>
+        +
+      </button>
+      <button type="button" onClick={minus}>
+        -
+      </button>
       <hr />
       <Map zoomLevel={zoomLevel} />
     </>

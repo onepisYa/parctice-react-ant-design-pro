@@ -1,7 +1,11 @@
 import { useState } from 'react';
 
 function MyButton({ count, onClick }: { count: number; onClick: () => void }) {
-  return <button onClick={onClick}>Clicked {count} times</button>;
+  return (
+    <button type="button" onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
 }
 
 /*

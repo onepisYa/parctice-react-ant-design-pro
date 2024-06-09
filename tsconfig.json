@@ -13,6 +13,7 @@
     "declaration": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
+    "typeRoots": ["./types/*.d.ts", "./node_modules/@types"],
     "paths": {
       "@/*": ["./src/*"],
       "@@/*": ["./src/.umi/*"],

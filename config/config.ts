@@ -9,6 +9,11 @@ import routes from './routes';
 const { REACT_APP_ENV = 'dev' } = process.env;
 
 export default defineConfig({
+  plugins: [require.resolve('@umijs/plugins/dist/unocss')],
+  unocss: {
+    // 检测 className 的文件范围，若项目不包含 src 目录，可使用 `pages/**/*.tsx`
+    watch: ['src/**/*.tsx'],
+  },
   /**
    * @name 开启 hash 模式
    * @description 让 build 之后的产物包含 hash 后缀。通常用于增量发布和避免浏览器加载缓存。
@@ -16,10 +21,11 @@ export default defineConfig({
    */
   hash: true,
   npmClient: 'npm', // fix
+  clickToComponent: { editor: 'vscode' },
   alias: {
     '@ant-design/pro-components/es': '@ant-design/pro-components/ES',
   },
-  /**
+  /**""
    * @name 兼容性设置
    * @description 设置 ie11 不一定完美兼容，需要检查自己使用的所有依赖
    * @doc https://umijs.org/docs/api/config#targets

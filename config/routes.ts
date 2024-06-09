@@ -149,6 +149,12 @@ export default [
         path: '/onepisya/use-reducer',
         component: './onepisya/use-reducer',
       },
+      {
+        name: '18.自定义Hook',
+        icon: 'smile',
+        path: '/onepisya/custom-hook',
+        component: './onepisya/custom-hook',
+      },
     ],
   },
   // --------------------- STUDY: react end ----------------

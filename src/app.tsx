@@ -10,7 +10,19 @@ import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 
-/**
+// HACK: 过滤掉 i18 的报错
+const err = console.error;
+console.error = (...data) => {
+  const e = data?.[0];
+  const isString = (e: any) => Object.prototype.toString.call(e) === '[object String]';
+  if (e && isString(e) && e.startsWith('[React Intl] Missing message:')) {
+    console.count('[React Intl]: Missing');
+  } else {
+    err(...data);
+  }
+};
+
+/**.
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
  * */
 export async function getInitialState(): Promise<{

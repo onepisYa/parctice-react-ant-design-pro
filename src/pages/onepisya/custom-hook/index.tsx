@@ -245,7 +245,7 @@ export default function UseStateExample() {
 
           <span>
             <p>这是把 Effect 包裹进自定义 Hook 有益的另一个原因：</p>
-            <ol style={{listStyle:'unset'}}>
+            <ol style={{ listStyle: 'unset' }}>
               <li>你让进出 Effect 的数据流非常清晰。</li>
               <li>你让组件专注于目标，而不是 Effect 的准确实现。</li>
               <li>当 React 增加新特性时，你可以在不修改任何组件的情况下移除这些 Effect。</li>

@@ -155,6 +155,12 @@ export default [
         path: '/onepisya/custom-hook',
         component: './onepisya/custom-hook',
       },
+      {
+        name: '19.类组件例子',
+        icon: 'smile',
+        path: '/onepisya/class-components',
+        component: './onepisya/class-components',
+      },
     ],
   },
   // --------------------- STUDY: react end ----------------

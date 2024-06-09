@@ -1,0 +1,29 @@
+@hr-color: #0c6cff;
+.container {
+  & > div {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+
+    &:hover {
+      .box-hover();
+    }
+
+    & > div {
+      position: relative;
+      z-index: 10;
+      max-height: 60vh;
+      overflow-y: scroll;
+    }
+  }
+  hr {
+    color: @hr-color;
+    background-color: @hr-color;
+    border-color: @hr-color;
+  }
+}
+
+.box-hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}

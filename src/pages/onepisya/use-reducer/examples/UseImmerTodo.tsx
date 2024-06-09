@@ -13,8 +13,10 @@ import type { Task, TaskAction } from './todo/index';
 import styles from './todo/styles.less';
 import TaskList from './todo/TaskList';
 
-function tasksReducer(draft: Task[]|null, action: TaskAction):Task[]|null{
-  if (draft===null){return null}
+function tasksReducer(draft: Task[] | null, action: TaskAction): Task[] | null {
+  if (draft === null) {
+    return null;
+  }
   switch (action.type) {
     case 'added': {
       draft.push({
@@ -23,13 +25,13 @@ function tasksReducer(draft: Task[]|null, action: TaskAction):Task[]|null{
         done: false,
       } as Task);
       // break;
-      return null
+      return null;
     }
     case 'changed': {
       const index = draft?.findIndex((t) => t.id === action?.task?.id);
       draft[index] = action.task!;
       // break;
-      return null
+      return null;
     }
     case 'deleted': {
       return draft.filter((t) => t.id !== action.id);
@@ -41,7 +43,7 @@ function tasksReducer(draft: Task[]|null, action: TaskAction):Task[]|null{
 }
 
 export default function TaskApp() {
-  const [tasks, dispatch] = useImmerReducer<Task[]|null, TaskAction>(tasksReducer, initialTasks);
+  const [tasks, dispatch] = useImmerReducer<Task[] | null, TaskAction>(tasksReducer, initialTasks);
 
   function handleAddTask(text: Task['text']) {
     dispatch({

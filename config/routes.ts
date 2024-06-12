@@ -161,6 +161,12 @@ export default [
         path: '/onepisya/class-components',
         component: './onepisya/class-components',
       },
+      {
+        name: '20.memo 例子',
+        icon: 'smile',
+        path: '/onepisya/use-memo',
+        component: './onepisya/use-memo',
+      },
     ],
   },
   // --------------------- STUDY: react end ----------------

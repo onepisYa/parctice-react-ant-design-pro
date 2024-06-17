@@ -169,6 +169,41 @@ export default [
       },
     ],
   },
+  {
+    path: '/onepisya-mobx',
+    name: 'onepisya-mobx-practice',
+    icon: 'smile',
+    routes: [
+      {
+        path: '/onepisya-mobx',
+        redirect: '/onepisya-mobx/helloworld',
+      },
+      {
+        name: '1. mobx 入门例子',
+        icon: 'smile',
+        path: '/onepisya-mobx/helloworld',
+        component: './onepisya-mobx/helloworld',
+      },
+      {
+        name: '2. mobx 入门例子 TodoList',
+        icon: 'smile',
+        path: '/onepisya-mobx/todo-list',
+        component: './onepisya-mobx/todo-list',
+      },
+      {
+        name: '3. mobx 设计模式例子',
+        icon: 'smile',
+        path: '/onepisya-mobx/design-pattern',
+        component: './onepisya-mobx/design-pattern',
+      },
+      {
+        name: '4. mobx 创建可观察对象（响应式对象）',
+        icon: 'smile',
+        path: '/onepisya-mobx/mobx-common-api',
+        component: './onepisya-mobx/mobx-common-api',
+      },
+    ],
+  },
   // --------------------- STUDY: react end ----------------
   {
     path: '/dashboard',

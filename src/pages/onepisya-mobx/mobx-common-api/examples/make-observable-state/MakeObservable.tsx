@@ -77,11 +77,10 @@ class Doubler {
     todoPromise
       .then((todo) => {
         this.setTodo(todo);
-        runInAction(()=>console.log(todo))
+        runInAction(() => console.log(todo));
       })
       .catch((err) => {
-
-        runInAction(()=>console.error(err))
+        runInAction(() => console.error(err));
       })
       .finally(() => {
         this.setTodoLoading(false);

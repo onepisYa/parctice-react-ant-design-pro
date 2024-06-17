@@ -7,18 +7,16 @@
  * 路漫漫其修远兮，吾将上下而求索。
  * @Description:
  */
-import { observable, runInAction } from "mobx"
-import { observer } from "mobx-react"
+import { observable, runInAction } from 'mobx';
+import { observer } from 'mobx-react';
 
-const state = observable({ value: 0 })
+const state = observable({ value: 0 });
 
 runInAction(() => {
-    state.value++
-    state.value++
-})
+  state.value++;
+  state.value++;
+});
 
-
-export default observer(()=>{
-    return <div>{state.value}</div>
-})
-
+export default observer(() => {
+  return <div>{state.value}</div>;
+});

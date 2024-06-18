@@ -41,4 +41,11 @@ export default {
       pathRewrite: { '^': '' },
     },
   },
+  proxytest: {
+    '/api': {
+      target: 'http://jsonplaceholder.typicode.com/',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
+    },
+  },
 };

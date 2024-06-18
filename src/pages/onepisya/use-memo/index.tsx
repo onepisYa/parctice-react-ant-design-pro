@@ -14,7 +14,7 @@ import SER from './examples/skipping-expensive-recalculations/index';
 import SRRWPAU from './examples/skipping-re-rendering-when-props-are-unchanged';
 import MyPage from './examples/skipping-re-rendering-with-useCallback-and-memo';
 import SRRWUMAM from './examples/skipping-re-rendering-with-useMemo-and-memo';
-import UAMCUAC from './examples/updating-a-memoized-component-using-a-context ';
+import UAMCUAC from './examples/updating-a-memoized-component-using-a-context';
 import UAMCUS from './examples/updating-a-memoized-component-using-state';
 import USFAMC from './examples/updating-state-from-a-memoized-callback';
 import styles from './styles.less';

@@ -204,6 +204,23 @@ export default [
       },
     ],
   },
+  {
+    path: '/onepisya-dva',
+    name: 'onepisya-dva-ant-practice',
+    icon: 'smile',
+    routes: [
+      {
+        path: '/onepisya-dva',
+        redirect: '/onepisya-dva/hello',
+      },
+      {
+        name: '1. 入门例子 ProductList',
+        icon: 'smile',
+        path: '/onepisya-dva/hello',
+        component: './onepisya-dva/hello',
+      },
+    ],
+  },
   // --------------------- STUDY: react end ----------------
   {
     path: '/dashboard',
